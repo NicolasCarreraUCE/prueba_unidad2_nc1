@@ -26,4 +26,10 @@ public class DoctorRepoImpl implements IDoctorRepo {
 		
 	}
 
+	@Override
+	public Doctor buscarDoctorPorCedula(String cedula) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

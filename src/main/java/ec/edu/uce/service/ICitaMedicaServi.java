@@ -1,8 +1,8 @@
-package ec.edu.uce.repository;
+package ec.edu.uce.service;
 
 import ec.edu.uce.modelo.CitaMedica;
 
-public interface ICitaMedicaRepo {
+public interface ICitaMedicaServi {
 	void insertarCitaMedica(CitaMedica citaMedica);
 	void actualizarCitaMedica(CitaMedica citaMedica);
 }

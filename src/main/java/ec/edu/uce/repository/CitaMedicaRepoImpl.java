@@ -20,8 +20,14 @@ public class CitaMedicaRepoImpl implements ICitaMedicaRepo {
 	private EntityManager entityManager;
 
 	@Override
-	public void insertar(CitaMedica citaMedica) {
+	public void insertarCitaMedica(CitaMedica citaMedica) {
 		// TODO Auto-generated method stub
 		this.entityManager.persist(citaMedica);
+	}
+
+	@Override
+	public void actualizarCitaMedica(CitaMedica citaMedica) {
+		// TODO Auto-generated method stub
+		this.entityManager.merge(citaMedica);
 	}
 }
