@@ -48,4 +48,12 @@ public class PacienteRepoImpl implements IPacienteRepo {
 		return myQuery.getSingleResult();
 	}
 
+	@Override
+	public Paciente buscarPacientePorCedula(String cedula) {
+		// TODO Auto-generated method stub
+		TypedQuery<Paciente> myQuery = this.entityManager.createQuery("SELECT p FROM Paciente p WHERE p.cedula =:cedula", Paciente.class);
+		myQuery.setParameter("cedula", cedula);
+		return myQuery.getSingleResult();
+	}
+
 }

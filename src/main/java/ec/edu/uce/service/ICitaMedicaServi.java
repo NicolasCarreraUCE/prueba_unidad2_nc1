@@ -8,4 +8,5 @@ public interface ICitaMedicaServi {
 	void actualizarCitaMedica(CitaMedica citaMedica);
 	void borrarCitaMedica(Integer id);
 	
+	CitaMedica buscarPorNuemro(String numero);
 }

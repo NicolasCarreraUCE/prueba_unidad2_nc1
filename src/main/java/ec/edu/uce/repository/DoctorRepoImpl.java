@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import ec.edu.uce.modelo.Doctor;
+import ec.edu.uce.modelo.Paciente;
 
 @Repository
 @Transactional
@@ -45,6 +46,14 @@ public class DoctorRepoImpl implements IDoctorRepo {
 		// TODO Auto-generated method stub
 		TypedQuery<Doctor> myQuery = this.entityManager.createQuery("SELECT d FROM Doctor d WHERE d.apellido =:apellido", Doctor.class);
 		myQuery.setParameter("apellido", apellido);
+		return myQuery.getSingleResult();
+	}
+
+	@Override
+	public Doctor buscarDoctorPorCedula(String cedula) {
+		// TODO Auto-generated method stub
+		TypedQuery<Doctor> myQuery = this.entityManager.createQuery("SELECT d FROM Doctor d WHERE d.cedula =:cedula", Doctor.class);
+		myQuery.setParameter("cedula", cedula);
 		return myQuery.getSingleResult();
 	}
 

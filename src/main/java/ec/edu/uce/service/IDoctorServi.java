@@ -9,4 +9,6 @@ public interface IDoctorServi {
 	void borrarDoctor(Integer id);
 	
 	Doctor buscarDoctorPorApellido(String apellido);
+	
+	Doctor buscarDoctorPorCedula(String cedula);
 }

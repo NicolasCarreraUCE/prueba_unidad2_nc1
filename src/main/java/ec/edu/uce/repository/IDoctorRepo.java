@@ -1,6 +1,7 @@
 package ec.edu.uce.repository;
 
 import ec.edu.uce.modelo.Doctor;
+import ec.edu.uce.modelo.Paciente;
 
 public interface IDoctorRepo {
 	void insertarDoctor(Doctor doctor);
@@ -9,4 +10,6 @@ public interface IDoctorRepo {
 	void borrarDoctor(Integer id);
 	
 	Doctor buscarDoctorPorApellido(String apellido);
+	
+	Doctor buscarDoctorPorCedula(String cedula);
 }

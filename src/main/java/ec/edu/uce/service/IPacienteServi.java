@@ -9,4 +9,6 @@ public interface IPacienteServi {
 	void borrarPaciente(Integer id);
 	
 	Paciente buscarPacientePorCodigoSeguro(String codigoSeguro);
+	
+	Paciente buscarPacientePorCedula(String cedula);
 }

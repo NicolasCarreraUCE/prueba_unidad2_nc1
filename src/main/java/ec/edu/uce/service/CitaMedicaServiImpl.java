@@ -41,4 +41,10 @@ public class CitaMedicaServiImpl implements ICitaMedicaServi {
 		this.citaMedicaRepo.borrarCitaMedica(id);
 	}
 
+	@Override
+	public CitaMedica buscarPorNuemro(String numero) {
+		// TODO Auto-generated method stub
+		return this.citaMedicaRepo.buscarPorNuemro(numero);
+	}
+
 }
