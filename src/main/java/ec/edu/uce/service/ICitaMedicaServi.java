@@ -1,5 +1,7 @@
 package ec.edu.uce.service;
 
+import java.time.LocalDateTime;
+
 import ec.edu.uce.modelo.CitaMedica;
 
 public interface ICitaMedicaServi {
@@ -8,4 +10,5 @@ public interface ICitaMedicaServi {
 	void actualizarCitaMedica(CitaMedica citaMedica);
 	void borrarCitaMedica(Integer id);
 	
+	CitaMedica buscarPorNuemro(String numero);
 }

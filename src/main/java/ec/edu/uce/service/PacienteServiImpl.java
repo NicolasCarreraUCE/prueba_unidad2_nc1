@@ -1,5 +1,8 @@
 package ec.edu.uce.service;
 
+
+import java.time.LocalDateTime;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +48,18 @@ public class PacienteServiImpl implements IPacienteServi {
 	public Paciente buscarPacientePorCodigoSeguro(String codigoSeguro) {
 		// TODO Auto-generated method stub
 		return this.pacienteRepo.buscarPacientePorCodigoSeguro(codigoSeguro);
+	}
+
+	@Override
+	public Paciente buscarPacientePorCedula(String cedula) {
+		// TODO Auto-generated method stub
+		return this.pacienteRepo.buscarPacientePorCedula(cedula);
+	}
+
+	@Override
+	public void reportePaciente(LocalDateTime fecha, String genero) {
+		// TODO Auto-generated method stub
+		this.pacienteRepo.reportePaciente(fecha, genero);
 	}
 
 	
