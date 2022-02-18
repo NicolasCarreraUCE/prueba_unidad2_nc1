@@ -3,10 +3,8 @@ package ec.edu.uce.modelo;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,33 +21,26 @@ public class Paciente {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_paciente")
 	@SequenceGenerator(name = "seq_paciente", sequenceName = "seq_paciente", allocationSize = 1)
 	private Integer id;
-
 	@Column(name = "paci_cedula")
 	private String cedula;
-	
 	@Column(name = "paci_nombre")
 	private String nombre;
-	
 	@Column(name = "paci_apellido")
 	private String apellido;
-	
 	@Column(name = "paci_fecha_nacimiento")
 	private LocalDateTime fechaNacimiento;
-	
 	@Column(name = "paci_codigo_seguro")
 	private String codigoSeguro;
-	
 	@Column(name = "paci_estatura")
-	private String estatura;
-	
+	private Double estatura;
 	@Column(name = "paci_peso")
-	private String peso;
+	private Double peso;
 	
 	@Column(name = "paci_genero")
 	private String genero;
 	
-	@OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<CitaMedica> citaMedica;
+	@OneToMany(mappedBy = "paciente")
+	private List<CitaMedica> citaMedicas;
 
 	// SET-GET
 	public Integer getId() {
@@ -100,19 +91,19 @@ public class Paciente {
 		this.codigoSeguro = codigoSeguro;
 	}
 
-	public String getEstatura() {
+	public Double getEstatura() {
 		return estatura;
 	}
 
-	public void setEstatura(String estatura) {
+	public void setEstatura(Double estatura) {
 		this.estatura = estatura;
 	}
 
-	public String getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(String peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 
@@ -124,19 +115,13 @@ public class Paciente {
 		this.genero = genero;
 	}
 
-	public List<CitaMedica> getCitaMedica() {
-		return citaMedica;
+	public List<CitaMedica> getCitaMedicas() {
+		return citaMedicas;
 	}
 
-	public void setCitaMedica(List<CitaMedica> citaMedica) {
-		this.citaMedica = citaMedica;
+	public void setCitaMedicas(List<CitaMedica> citaMedicas) {
+		this.citaMedicas = citaMedicas;
 	}
-
-	@Override
-	public String toString() {
-		return "Paciente [id=" + id + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", fechaNacimiento=" + fechaNacimiento + ", codigoSeguro=" + codigoSeguro + ", estatura=" + estatura
-				+ ", peso=" + peso + ", genero=" + genero + ", citaMedica=" + citaMedica + "]";
-	}
+	
 	
 }

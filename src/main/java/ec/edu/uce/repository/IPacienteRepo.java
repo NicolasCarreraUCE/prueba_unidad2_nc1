@@ -1,12 +1,18 @@
 package ec.edu.uce.repository;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import ec.edu.uce.modelo.Paciente;
 
 public interface IPacienteRepo {
 	void insertarPaciente(Paciente paciente);
+	Paciente buscarPaciente(Integer id);
+	void actualizarPaciente(Paciente paciente);
+	void borrarPaciente(Integer id);
+	
+	Paciente buscarPacientePorCodigoSeguro(String codigoSeguro);
+
 	Paciente buscarPacientePorCedula(String cedula);
-	List<Paciente> buscarPacientePorFechaNacimientoYGerno(LocalDateTime fechaNacimiento, String genero);
+	
+	void reportePaciente(LocalDateTime fecha, String genero);
 }
